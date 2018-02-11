@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dain's Page</title>
+  <meta name="description" content="Personal Portfolio">
+  <meta name="author" content="Dain Baril">
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme (from the documentation)-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- My own CSS-->
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+
+      <div class="container">
+
+          <div class="navbar-header">
+            <a href="index.html" class="navbar-brand">DAIN BARIL</a>
+          </div>
+          <div>
+            <ul class="nav nav-pills">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+
+              <!--I don't know why this doesn't dropdown. I'll fix it later.-->
+              <!-- Okay so it looks like you need to load jQuery before the JS -->
+              <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="nav" role="button" aria-haspopup="true" aria-expanded="false">
+                Contact <span class="caret"></span>
+              </a>
+
+              <ul class="dropdown-menu">
+                  <li><a href="contact.html">Contact</a></li>
+                  <li role="separator" class="divider"></li>
+                <li><a href="http://www.github.com/dfbaril">Github</a></li>
+                <li><a href="http://www.linkedin.com/dain.baril">LinkedIn</a></li>
+              </ul>
+
+              </li>
+            </ul>
+
+          </div>
+      </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="well well-lg">
+          <p>Dain Baril is the author of this website. He is an army brat, with a brother and sister. He's lived all over the US, at different army posts. He has worked various jobs in manual labor and in the service industry, and he's hoping to break into the web development field. He is starting to really enjoy it, and especially has enjoyed working with bootstrap. He's starting to get into Javascript and jQuery, with the rest of his class.</p>
+           <p>He has an eclectic assortment of interests, which include technology, playing saxophone, and watching motorsports. His favorite motorsport is Formula 1. He is often surprised that he has such a huge interest in cars, because he used to think cars were just a means to get from A to B, but now he eats his words every March, when the F1 season starts.</p>
+
+          <!-- I can't get these dropdowns to work-->
+          <!-- Fixed it by loading jQuery before JS -->
+          <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="dropdownMenu" aria-labelledby="dropdownMenu">Dain's Hobbies
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>Hiking</li>
+                <li><span class="glyphicon glyphicon-knight" aria-hidden="true"></span>Chess</li>
+                <li><span class="glyphicon glyphicon-scale" aria-hidden="true"></span>Eating</li>
+              </ul>
+            </div>
+        </div>
+      </div>
+
+
+      <!-- I'd like this to move above the text on mobile phones. Maybe a bit of JS would delete this and write it up there? -->
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <img src="./dainbaril.jpg" alt="Dain Baril's portrait">
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <footer class="footer">
+      <div class="container text-center">
+        <p></p>
+        <p class="text-muted" id="copyright">
+            &copy; 2018<script>
+                //new object called Date, which gets the full year. It's called on to write "-'current year'"
+            new Date().getFullYear()
+            document.write("-"+new Date().getFullYear());
+            </script>, Dain Baril. All rights reserved. 
+        </p>
+      </div>
+  </footer>
+
+  <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
+</body>
+</html>

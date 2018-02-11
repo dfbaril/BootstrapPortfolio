@@ -1,0 +1,90 @@
+/*
+Possible colors list;
+*/
+.color-primary-0 { color: #91E2DF }	/* Main Primary color */
+.color-primary-1 { color: #EAFDFD }
+.color-primary-2 { color: #BEF3F1 }
+.color-primary-3 { color: #68CAC6 }
+.color-primary-4 { color: #44AAA6 }
+
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom same as footer height */
+    margin-bottom: 75px;
+    background-color: rgb(246, 253, 253);
+  }
+  /*
+  nav {
+    background-color: #b1a296;
+    background-image: none;
+    background-repeat: no-repeat;
+  }
+  .navbar {
+    background-color: #b1a296;
+    background-image: none;
+    background-repeat: no-repeat;
+  }
+  */
+
+  img {
+      width: 100%;
+      height: 100%;
+      border-radius:10px;
+  }
+
+  .navbar-default{
+    background-color: #BEF3F1;
+    background-image: none;
+    background-repeat: no-repeat;
+    border-bottom-color: #44AAA6;
+  }
+  .nav-pills a {
+    opacity: 1;
+    background-color: #BEF3F1;
+  }
+
+  .navbar-header a {
+      opacity: 1;
+      background-color:#44AAA6;
+      color: #EAFDFD;
+  }
+
+  .well-lg {
+      background-image: none;
+      background-color: #BEF3F1;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 75px;
+    background-color: #BEF3F1;
+    border-width:0;
+    border-top-width:1px;
+    border-style: solid;
+    border-color: #44AAA6;
+  }
+
+  .breadcrumb {
+      margin: 0;
+      padding: 0;
+      width: 30%;
+      margin-left:auto;
+      margin-right:auto;
+      color: #5D5C61;
+      background-color:#BEF3F1;
+      border-color:#44AAA6;
+  }
+  .breadcrumb a {
+    color: #5D5C61;
+  }
+  #copyright {
+      margin: 0;
+      font-size: 70%;
+      color: #5D5C61;
+  }

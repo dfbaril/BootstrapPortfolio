@@ -1,0 +1,150 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact Me</title>
+  <meta name="description" content="Personal Portfolio">
+  <meta name="author" content="Dain Baril">
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme (from the documentation)-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- My own CSS-->
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+
+      <div class="container">
+
+          <div class="navbar-header">
+            <a href="index.html" class="navbar-brand">DAIN BARIL</a>
+          </div>
+          <div>
+            <ul class="nav nav-pills">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+
+              <!--I don't know why this doesn't dropdown. I'll fix it later.-->
+              <!-- Okay so it looks like you need to load jQuery before the JS -->
+              <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Contact <span class="caret"></span>
+              </a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html">Contact</a></li>
+                    <li role="separator" class="divider"></li>
+                  <li><a href="http://www.github.com/dfbaril">Github</a></li>
+                  <li><a href="http://www.linkedin.com/dain.baril">LinkedIn</a></li>
+                </ul>
+
+              </li>
+            </ul>
+
+          </div>
+      </div>
+  </nav>
+
+  <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-area">  
+                <!-- In the <form> element, I can put action="mailto:XXXXX@website.com", but I don't think I can get this form to send anything
+                     without something I haven't learned yet. Plus it will likely have to be encrypted, and I don't 
+                    really know how to do that yet. -->
+                <form role="form">
+                    <!-- This clear give it some more margin space. -->
+                <br style="clear:both">
+                            <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+
+                            <!-- https://getbootstrap.com/docs/3.3/components/#input-groups -->
+                            <!-- The ID's are all referred to at the bottom in the script -->
+                            <!-- The 'required' attribute makes a speech bubble pop up indicating it's required -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <!-- This phone number field is optional -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number">
+                            </div>
+                            <div class="form-group">
+                            <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                            <!-- Bootstrap help-block adds some styling. The characterLeft id is called on in the script at the end of the page, and it writes inside the <p> tags. -->
+                                <span class="help-block"><p id="characterLeft" class="help-block "></p></span>                    
+                            </div>
+                            <!-- submit is called on in the script at the bottom -->
+                            <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+                </form>
+            </div>
+        </div>
+        </div>
+
+
+
+
+
+  <footer class="footer">
+      <div class="container text-center">
+        <p class="text-muted">
+            <ol class="breadcrumb">
+                <li><a href="./index.html">Home</a></li>
+                <li class="active">Contact</li>
+            </ol>
+        </p>
+        <p class="text-muted" id="copyright">
+            &copy; 2018<script>
+                //new object called Date, which gets the full year. It's called on to write "-'current year'"
+            new Date().getFullYear()
+            document.write("-"+new Date().getFullYear());
+            </script>, Dain Baril. All rights reserved.
+        </p>
+      </div>
+  </footer>
+
+
+  <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+    // $ calls on the jQuery library. This script will limit the number of characters the the contact form uses
+    // When the var 'len' (short for length) is 140+, then it will disable the submit button, it will change the number of characters
+    // into the text "Max characters reached", and it will be displayed in red. 
+ $(document).ready(function(){ 
+    $('#characterLeft').text('140 characters left');
+    $('#message').keydown(function () {
+        var max = 140;
+        var len = $(this).val().length;
+        if (len >= max) {
+            $('#characterLeft').text('Max characters reached');
+            $('#characterLeft').addClass('red');
+            //This adds the bootstrap class of disabled to the submit button once there are 140 characters
+            $('#btnSubmit').addClass('disabled');            
+        } 
+        else {
+            var ch = max - len;
+            $('#characterLeft').text(ch + ' characters left');
+            $('#btnSubmit').removeClass('disabled');
+            $('#characterLeft').removeClass('red');            
+        }
+    });    
+});
+</script>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
+</body>
+</html>
